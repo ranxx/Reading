@@ -17,7 +17,7 @@ public:
             m_pData = NULL;
             return;
         }
-         m_pData = new char[strlen(str.m_pData) + 1];
+        m_pData = new char[strlen(str.m_pData) + 1];
         strcpy(m_pData, str.m_pData);
     }
     CMyString(const std::string& str){
@@ -36,6 +36,7 @@ public:
     }
     CMyString& operator=(const CMyString& str) {
         if (this != &str) {
+            // 异常安全性
             CMyString tmp(str);
             char *p = tmp.m_pData;
             tmp.m_pData = this->m_pData;
@@ -51,10 +52,12 @@ private:
     char *m_pData;
 };
 
-int main() {
+int main(int argc, char **argv) {
 
     CMyString str1(std::string("hello world"));
-    // CMyString str2("hello world");
+    CMyString str2(str1);
+    CMyString str3(str2);
+    str1 = str2 = str1;
 
     return 0;
 }
