@@ -10,55 +10,33 @@ private:
     Singleton(const Singleton&);
     // 私有化赋值构造
     Singleton& operator=(const Singleton&);
-
-    // static T * m_Instance;
 public:
     static T* GetInstance(){
-        // if (m_Instance == NULL) {
-        //     m_Instance = new T();
-        // }
         static T m_Instance;
         return &m_Instance;
     }
-    static void Echo() {
-        // std::cout << m_Instance << std::endl;
+};
+
+class test1 {
+public:
+    void Echo() {
+        std::cout << this << std::endl;
     }
 };
 
-// Singleton *Singleton::m_Instance = new Singleton();
-
-// class Test : public Singleton<Test> {
-//     friend class Singleton<Test>;
-// public:
-//     Test(){};
-//     Test(const Test&);
-//     Test& operator=(const Test&);
-//     Say(){};
-// };
-
-class test {
+class test2 {
 public:
-    test(){};
-    say(){};
+    void Echo() {
+        std::cout << this << std::endl;
+    }
 };
-
-
 
 int main(int argc, char **argv) {
 
-    // Singleton *p1 = Singleton::GetInstance();
-    // Singleton *p2 = Singleton::GetInstance();
-    // Singleton *p3 = Singleton::GetInstance();
-    // Singleton *p4 = Singleton::GetInstance();
-
-
-    // p1->Echo();
-    // p2->Echo();
-    // p3->Echo();
-    // p4->Echo();
-    test *p = Singleton<test>::GetInstance();
-    p->say();
-
+    Singleton<test1>::GetInstance()->Echo();
+    Singleton<test1>::GetInstance()->Echo();
+    Singleton<test2>::GetInstance()->Echo();
+    Singleton<test2>::GetInstance()->Echo();
 
     return 0;
 }
