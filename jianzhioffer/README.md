@@ -8,3 +8,4 @@
 * [4. 二维数组中的查找](./chapter2/4.cpp)
 * [5. 替换空格](./chapter2/5.cpp)
 * [6. 从头到尾打印链表](./chapter2/6.cpp)
+* [7. 重建二叉树](./chapter2/7.cpp)
