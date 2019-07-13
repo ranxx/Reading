@@ -6,7 +6,7 @@
 using namespace std;
 
 // 0 ~ n-1
-int duplicate(int str[], const int len) {
+int duplicate(int str[], int len) {
     if (str == nullptr || len <= 0 ) {
         return -1;
     }
@@ -26,7 +26,7 @@ int duplicate(int str[], const int len) {
     return -1;
 }
 
-int duplicateNumberUseMap(int str[], const int len) {
+int duplicateNumberUseMap(int str[], int len) {
     map<int, bool> items;
     for (int i = 0; i < len; ++i) {
         if (items[str[i]]) {
