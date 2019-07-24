@@ -118,7 +118,7 @@ int main(PARAMS) {
     std::cout << std::endl;
     destroy(root);
 
-    int zero[] = {};
+    int *zero;
     root = construct(zero, zero, 0);
     preorder(root);
     std::cout << std::endl;

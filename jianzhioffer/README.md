@@ -9,3 +9,5 @@
 * [5. 替换空格](./chapter2/5.cpp)
 * [6. 从头到尾打印链表](./chapter2/6.cpp)
 * [7. 重建二叉树](./chapter2/7.cpp)
+* [8. 二叉树的下一个节点](./chapter2/8.cpp)
+* [9. 用两个栈实现队列](./chapter2/9.cpp)
